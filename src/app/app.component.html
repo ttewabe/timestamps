@@ -2,10 +2,14 @@
   <div class="row">
 
     <button
-    class="btn btn-primary">Display Details</button>
+    class="btn btn-primary"
+    (click)="onDisplayDetailsClick()">Display Details</button>
 
-    <p >Secret Password = 'tuna'</p>
-
+    <p *ngIf="displayPassword">Secret Password = 'tuna'</p>
+    <p
+    *ngFor="let timestamp of timestamps"
+    [ngClass]="{'white-text': timestamp >= 5}"
+    [ngStyle]="{backgroundColor: timestamp >= 5 ? 'blue' : 'white'}">{{timestamp}}</p>
 
   </div>
 </div>
