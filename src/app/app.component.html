@@ -3,13 +3,15 @@
 
     <button
     class="btn btn-primary"
-    (click)="onDisplayDetailsClick()">Display Details</button>
+    (click)="onDisplayDetailsClick()" [ngStyle]="{backgroundColor: 'rgb(0, 98, 128)'}">Display Details</button>
 
-    <p *ngIf="displayPassword">Secret Password = 'tuna'</p>
-    <p
-    *ngFor="let timestamp of timestamps"
-    [ngClass]="{'white-text': timestamp >= 5}"
-    [ngStyle]="{backgroundColor: timestamp >= 5 ? 'blue' : 'white'}">{{timestamp}}</p>
-
+    <hr>
+    <p *ngIf="showSecret">Secret Password = 'tuna'</p>
+      <div class="display-item"
+          *ngFor="let logItem of log"
+          [ngClass]="{'white-text': logItem >= 5}"
+          [ngStyle]="{backgroundColor: logItem >= 5 ? 'rgb(57, 6, 6)' : 'rgb(89, 111, 239)'}">
+          {{logItem}}
+      </div>
   </div>
 </div>

@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  displayPassword : boolean = false;
-  timestamps : any = [];
+  showSecret : boolean = false;
+  log : any = [];
 
   onDisplayDetailsClick() {
-  this.displayPassword = !this.displayPassword;
-  this.timestamps.push(this.timestamps.length+1);
+  this.showSecret = !this.showSecret;
+  this.log.push(this.log.length+1);
   }
   }
